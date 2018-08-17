@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	
+<mapper namespace="com.user.mapper.UserMapper">
+<select id="list" resultType="map" >
+select * from lx_home h left JOIN
+lx_make m on h.id=m.hid
+<if test="search!=null and search!=''">
+where h.name like concat('%',concat(#{search},'%'))
+</if>
+</select>
+<select id="tomake" resultType="map" >
+select * from lx_home h left JOIN
+lx_make m on h.id=m.hid
+where id=#{id}
+</select>
+<insert id="add">
+insert into lx_make values(null,#{sdate},#{saddress},#{phone},#{remark},#{hid})
+</insert>
+<update id="update">
+update lx_make set sdate=#{sdate},saddress=#{saddress},phone=#{phone},remark=#{remark} where hid=#{hid}
+</update>
+<update id="addup">
+update lx_home set state=1 where id=#{hid}
+</update>
+<update id="delup">
+update lx_home set state=0 where id=#{hid}
+</update>
+<delete id="del">
+delete from lx_make where hid=#{hid}
+</delete>
+
+
+</mapper>

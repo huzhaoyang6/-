@@ -1,0 +1,17 @@
+{"code":"1","msg":"操作成功",
+	"data":{
+		"pagesize":10,"cpage":5,"totoleSize":100,"pagecount":10,
+		"list":[ 
+			{
+				"id":1,
+				"name":"回忆",
+				"imgurl":"../static/55f7dcad69401b0acb7cd09d.jpg"
+			},
+			{
+				"id":2,
+				"name":"地点",
+				"imgurl":"../static/55ed6ccb69401b4f7e474900.jpg"
+			}
+		]
+	}
+}
